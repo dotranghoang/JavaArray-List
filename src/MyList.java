@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MyList<E> implements Cloneable {
+public class MyList<E>  {
     int size = 0;
     static final int DEFAULT_CAPACITY = 10;
     private Object elements[];
@@ -114,9 +114,9 @@ public class MyList<E> implements Cloneable {
         return Arrays.toString(elements);
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public MyList[] clone() {
+        MyList[] clone = (MyList[]) Arrays.copyOf(elements , elements.length);
+        return clone;
     }
 
 }
